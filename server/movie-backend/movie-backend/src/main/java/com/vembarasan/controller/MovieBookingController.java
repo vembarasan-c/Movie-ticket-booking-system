@@ -19,7 +19,12 @@ public class MovieBookingController {
 
     @PostMapping("/bookTicket")
     public MovieBooking bookTicket(@RequestBody MovieBooking movieBooking){
-        System.out.println(movieBooking);
+        Movie movie = movieService.getMovie(movieBooking.getTitle());
+        int ticket = movieBooking.getNumberOfTickets();
+        int availableTickets = movie.getAvailableTickets() - ticket;
+        movie.setAvailableTickets( availableTickets);
+        movieService.save(movie);
+    
         return  movieBookingService.saveBooking(movieBooking);
     }
 
