@@ -34,4 +34,8 @@ public class MovieServiceImpl {
         return movieRepository.save(media);
     }
 
+    public Movie save (Movie movie){
+        return movieRepository.save(movie);
+    }
+
 }
