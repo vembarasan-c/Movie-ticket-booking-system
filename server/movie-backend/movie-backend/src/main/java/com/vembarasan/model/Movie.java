@@ -14,7 +14,7 @@ public class Movie {
     private String description;
     private String language;
     private String duration;
-//    private int duration;
+   private int availableTickets;
 
     @Temporal(TemporalType.DATE)
     private Date releaseDate;
@@ -101,4 +101,14 @@ public class Movie {
     public void setData(byte[] data) {
         this.data = data;
     }
+
+    
+    public int getAvailableTickets() {
+        return availableTickets;
+    }
+
+    public void setAvailableTickets(int availableTickets) {
+        this.availableTickets = availableTickets;
+    }
+    
 }
